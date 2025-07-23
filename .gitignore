@@ -50,3 +50,10 @@
 .DS_Store
 # Windows
 Thumbs.db
+
+# LaTeX build directory (intermediate files)
+build/
+
+# Keep output directory but ignore its contents except PDFs
+output/*
+!output/*.pdf

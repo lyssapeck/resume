@@ -1,79 +1,256 @@
 
-\documentclass[11pt,a4paper]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{geometry}
-\geometry{margin=1in}
-\usepackage{enumitem}
-\usepackage{hyperref}
-\usepackage{titlesec}
-\usepackage{authblk}
-\usepackage{abstract}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\rhead{A. Peck}
-\lhead{Curriculum Vitae}
-\cfoot{\thepage}
+\documentclass[10pt, letterpaper]{article}
 
-\title{Curriculum Vitae: Alyssa Peck}
-\author[1]{Alyssa Peck}
-\affil[1]{123 Love Lane, Pleasantville, USA \\ (555) 123-4567 \\ \href{mailto:alyssa1peck@gmail.com}{alyssa1peck@gmail.com} \\ \href{https://linkedin.com/in/graceharper}{linkedin.com/in/graceharper}}
-\date{July 22, 2025}
+% Packages:
+\usepackage[
+    ignoreheadfoot, % set margins without considering header and footer
+    top=2 cm, % seperation between body and page edge from the top
+    bottom=2 cm, % seperation between body and page edge from the bottom
+    left=2 cm, % seperation between body and page edge from the left
+    right=2 cm, % seperation between body and page edge from the right
+    footskip=1.0 cm, % seperation between body and footer
+    % showframe % for debugging 
+]{geometry} % for adjusting page geometry
+\usepackage{titlesec} % for customizing section titles
+\usepackage{tabularx} % for making tables with fixed width columns
+\usepackage{array} % tabularx requires this
+\usepackage[dvipsnames]{xcolor} % for coloring text
+\definecolor{primaryColor}{RGB}{0, 79, 144} % define primary color
+\usepackage{enumitem} % for customizing lists
+\usepackage{fontawesome5} % for using icons
+\usepackage{amsmath} % for math
+\usepackage[
+    pdftitle={Alyssa Peck's CV},
+    pdfauthor={Alyssa Peck},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref} % for links, metadata and bookmarks
+\usepackage[pscoord]{eso-pic} % for floating text on the page
+\usepackage{calc} % for calculating lengths
+\usepackage{bookmark} % for bookmarks
+\usepackage{lastpage} % for getting the total number of pages
+\usepackage{changepage} % for one column entries (adjustwidth environment)
+\usepackage{paracol} % for two and three column entries
+\usepackage{ifthen} % for conditional statements
+\usepackage{needspace} % for avoiding page brake right after the section title
+\usepackage{iftex} % check if engine is pdflatex, xetex or luatex
+
+% Ensure that generate pdf is machine readable/ATS parsable:
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    % \usepackage[T1]{fontenc} % this breaks sb2nov
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+
+
+% Some settings:
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before adjustwidth environment
+\pagestyle{empty} % no header or footer
+\setcounter{secnumdepth}{0} % no section numbering
+\setlength{\parindent}{0pt} % no indentation
+\setlength{\topskip}{0pt} % no top skip
+\setlength{\columnsep}{0cm} % set column seperation
+\makeatletter
+\let\ps@customFooterStyle\ps@plain % Copy the plain style to customFooterStyle
+\patchcmd{\ps@customFooterStyle}{\thepage}{
+    \color{gray}\textit{\small Alyssa Peck - Page \thepage{} of \pageref*{LastPage}}
+}{}{} % replace number by desired string
+\makeatother
+\pagestyle{customFooterStyle}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{
+    % left space:
+    -1pt
+}{
+    % top space:
+    0.3 cm
+}{
+    % bottom space:
+    0.2 cm
+} % section title spacing
+
+\renewcommand\labelitemi{$\circ$} % custom bullet points
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0.4 cm + 10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights for bullet entries
+
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0.2 cm + 0.00001 cm
+    }{
+        0.2 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+} % new environment for one column entries
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+} % new environment for two column entries
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+} % new environment for the header
+
+\newcommand{\placelastupdatedtext}{% \placetextbox{<horizontal pos>}{<vertical pos>}{<stuff>}
+  \AddToShipoutPictureFG*{% Add <stuff> to current page foreground
+    \put(
+        \LenToUnit{\paperwidth-2 cm-0.2 cm+0.05cm},
+        \LenToUnit{\paperheight-1.0 cm}
+    ){\vtop{{\null}\makebox[0pt][c]{
+        \small\color{gray}\textit{Last updated in July 2025}\hspace{\widthof{Last updated in July 2025}}
+    }}}%
+  }%
+}%
+
+% save the original href command in a new command:
+\let\hrefWithoutArrow\href
+
+% new command for external links:
+\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
+
 
 \begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{}
 
-\maketitle
+    \placelastupdatedtext
+    \begin{header}
+        \textbf{\fontsize{24 pt}{24 pt}\selectfont Beautiful Girl}
 
-\begin{abstract}
-Alyssa Peck is a compassionate, dedicated, and endlessly patient individual with a lifelong commitment to helping others. Renowned for her warmth, generosity, and ability to bring out the best in everyone she meets. She seeks opportunities to make a positive impact in her community and beyond.
-\end{abstract}
+        \vspace{0.3 cm}
 
-\vspace{1em}
-\noindent\textbf{Keywords:} education, community, volunteerism, empathy, leadership
+        \normalsize
+        \mbox{{\color{black}\footnotesize\faMapMarker*}\hspace*{0.13cm}San Jose, CA}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{mailto:alyssa1peck@gmail.com}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}alyssa1peck@gmail.com}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{https://linkedin.com/in/alyssapeck}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}alyssapeck}}%
+    \end{header}
+
+    \vspace{0.3 cm - 0.3 cm}
 
 
-% Unnumbered sections and horizontal rules for dividing lines
-\section*{Professional Experience}
-\noindent\rule{\textwidth}{0.4pt}
-\subsection*{Community Volunteer, Pleasantville Community Center (2015--Present)}
-\begin{itemize}[leftmargin=*]
-    \item Organizes weekly food drives, clothing donations, and outreach programs for local families in need.
-    \item Mentors children and teens, fostering self-confidence and kindness.
-    \item Coordinates holiday events, ensuring everyone feels included and valued.
-\end{itemize}
+    \section{Professional Summary}
 
-\subsection*{Elementary School Teacher, Pleasantville Elementary School (2005--2015)}
-\begin{itemize}[leftmargin=*]
-    \item Created a nurturing classroom environment where every child felt safe and supported.
-    \item Developed creative lesson plans that encouraged curiosity and empathy.
-    \item Received ``Teacher of the Year'' award for outstanding dedication and positive influence.
-\end{itemize}
+        \begin{onecolentry}
+            CPA with 9 years of experience leading global cross-functional teams, driving digital finance transformation, and optimizing processes. Passionate about aligning financial operations with strategic goals through automation, advanced analytics, and continuous improvement.
+        \end{onecolentry}
 
-\section*{Education}
-\noindent\rule{\textwidth}{0.4pt}
-\textbf{Bachelor of Arts in Education}, Pleasantville University (2001--2005)
+    
+    \section{Experience}
 
-\section*{Skills}
-\noindent\rule{\textwidth}{0.4pt}
-\begin{itemize}[leftmargin=*]
-    \item Exceptional interpersonal and communication skills
-    \item Conflict resolution and active listening
-    \item Event planning and organization
-    \item Empathy, patience, and positivity
-    \item Teamwork and leadership
-\end{itemize}
+        \begin{twocolentry}{
+        \textit{San Jose, CA}    
+            
+        \textit{August 2023 – Present}}
+            \textbf{Assurance Senior Manager and Digital Advisor}
+            
+            \textit{Ernst \& Young}
+        \end{twocolentry}
 
-\section*{Awards and Recognition}
-\noindent\rule{\textwidth}{0.4pt}
-\begin{itemize}[leftmargin=*]
-    \item Pleasantville ``Heart of Gold'' Award, 2022
-    \item Teacher of the Year, Pleasantville Elementary, 2012
-    \item Volunteer of the Month, Pleasantville Community Center, multiple years
-\end{itemize}
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \textit{Previously: Assurance Manager and Digital Coach, Senior and Associate (August 2016 – August 2023)}
+        \end{onecolentry}
 
-\section*{References}
-\noindent\rule{\textwidth}{0.4pt}
-Available upon request.
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Led multiple global audits for Fortune 100 tech clients, managing teams of 8-15, while collaborating with diverse external and internal stakeholders, including international component and offshore support teams
+                \item Owned and led digital transformation strategy for EY's Apple account and served as Digital Advisor to West Region, coaching teams on GenAI, Alteryx, Power BI, and global tools adoption, aligning with Lean Six Sigma principles
+                \item Experienced in complex technical accounting matters, including stock-based compensation, leases, capitalized software, investments, revenue recognition, and convertible debt. Led audit adoptions of new standards like ASC 842 and ASC 606
+                \item Ensured efficient and effective SOX 404 compliance by developing a deep understanding of clients' business and IT processes, providing best practice recommendations
+                \item Developed and deployed 15+ custom digital tools for engagement teams, including a key dashboard visualization tool that was the foundation for the current solution used by engagement teams across the US
+                \item Developed and deployed end to end data pipelines to provide key insights on financial metrics, trends, and correlations required to provide assurance financials are appropriately stated
+                \item Drove transformation of data tooling within EY to improve process efficiency and accuracy, working with IT to provision new systems to allow me and my team to build software tools for data processing
+                \item Communicated results to clients' Audit Committee, to drive alignment between financial reporting objectives and enterprise risk/governance frameworks
+                \item Recognized as a high performer with early promotions to Manager and Senior Manager roles and external recognition by the San Francisco Business Times/CAL CPA as an honoree of the Next Generation in Accounting
+                \item Understood clients' strategic business objectives through various touchpoints, including quarterly meetings with C-Suite executives, to ensure alignment
+                \item Coordinated and managed 20+ global statutory audits annually, while supporting an additional 50+. Traveled internationally to coach teams on best practices and emerging industry trends
+                \item Trained and supervised junior staff on US GAAP, regulatory matters, best practices, and EY's digital audit methodology through both formal lectures and on-the-job training
+                \item Ensured compliance with external and internal deadlines by reorganizing team priorities, adjusting workloads, and restructuring teams to achieve timely completion of all audits
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \textbf{Industry Focus:} Tech (including SaaS), Retail
+        \end{onecolentry}
+
+    
+    \section{Education}
+
+        \begin{twocolentry}{
+            \textit{Santa Clara, CA}
+            
+        \textit{Graduated June 2016}}
+            \textbf{Santa Clara University}
+
+            \textit{Bachelor of Science in Accounting, Minor in Entrepreneurship}
+        \end{twocolentry}
+
+    
+    \section{Skills and Certifications}
+
+        \begin{onecolentry}
+            \textbf{Certifications and Memberships:} Certified Public Accountant, California Board of Accountancy (145179) and AICPA member, EY Digital Silver Badge, Alteryx Designer Core Certification, Lean Six Sigma White Belt
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+
+        \begin{onecolentry}
+            \textbf{Skills:} US GAAP, Digital Transformation and Automation (AI/RPA), Global Process Optimization, SOX 404 Compliance \& Risk Mitigation, Cross-Functional Leadership and Talent Development, Data Analytics
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+
+        \begin{onecolentry}
+            \textbf{Systems:} SAP, NetSuite, Power BI, Power Automate (RPA), Alteryx (ETL), Microsoft 365, Copilot, Blackline, Workday, Coupa, AuditBoard, Asana, Box, DataSnipper, SQL
+        \end{onecolentry}
 
 \end{document}
