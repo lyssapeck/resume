@@ -3,7 +3,7 @@
 % Packages:
 \usepackage[
     ignoreheadfoot, % set margins without considering header and footer
-    top=1.5 cm, % seperation between body and page edge from the top
+    top=1 cm, % seperation between body and page edge from the top
     bottom=1.5 cm, % seperation between body and page edge from the bottom
     left=1.5 cm, % seperation between body and page edge from the left
     right=1.5 cm, % seperation between body and page edge from the right
@@ -106,7 +106,7 @@
 \newenvironment{twocolentry}[2][]{
     \onecolentry
     \def\secondColumn{#2}
-    \setcolumnwidth{\fill, 4.5 cm}
+    \setcolumnwidth{\fill, 5.5 cm}
     \begin{paracol}{2}
 }{
     \switchcolumn \raggedleft \secondColumn
@@ -152,7 +152,7 @@
         \mbox{\hrefWithoutArrow{https://linkedin.com/in/alyssapeck}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}alyssapeck}}%
     \end{header}
 
-    \vspace{0.3 cm - 0.3 cm}
+    \vspace{0.10 cm}
 
     \begin{onecolentry}
         CPA with 9 years of experience leading global cross-functional teams, driving digital finance transformation, and optimizing processes. Passionate about aligning financial operations with strategic goals through automation, advanced analytics, and continuous improvement.
@@ -167,40 +167,42 @@
         \end{twocolentry}
 
         \vspace{0.10 cm}
-        \begin{onecolentry}
-            \textit{Previously: Assurance Manager and Digital Coach, Senior and Associate | August 2016 – August 2023}
-        \end{onecolentry}
+        \begin{twocolentry}{
+        \textit{August 2016 – August 2023}}
+            \textbf{Assurance Manager and Digital Coach, Senior and Associate}
+        \end{twocolentry}
+        
+        
+        \vspace{0.10 cm}
+        \begin{twocolentry}{
+
+            \textit{Ernst \& Young, San Jose, CA}
+            }
+            \textit{Industry Focus:} Tech (including SaaS), Retail
+        \end{twocolentry}
 
         \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item Led multiple global audits for Fortune 100 tech clients, managing teams of 8-15, while collaborating with diverse external and internal stakeholders, including international component and offshore support teams
                 \item Owned and led digital transformation strategy for EY's Apple account and served as Digital Advisor to West Region, coaching teams on GenAI, Alteryx, Power BI, and global tools adoption, aligning with Lean Six Sigma principles
-                \item Built sophisticated revenue recognition analytics and monitoring systems for subscription-based business models, including Box Inc., analyzing revenue streams and creating predictive analytical procedures to forecast revenues under ASC 606
                 \item Developed comprehensive financial data models downstream from NetSuite and SAP B1 systems, creating reports and leveraging data for automated dashboards and financial analysis, including aging analysis, trend reporting, correlation analysis, and variance analysis
-                \item Experienced in complex technical accounting matters, including stock-based compensation, leases, capitalized software, investments, revenue recognition, and convertible debt. Led audit adoptions of new standards like ASC 842 and ASC 606
-                \item Performed Budget vs Actual (BvA) analysis for engagement teams to assess project profitability and resource allocation, forecasting future financial performance based on historical data and current trends using advanced analytical techniques
+                % \item Performed Budget vs Actual (BvA) analysis for engagement teams to assess project profitability and resource allocation
                 \item Implemented statistical sampling methodologies to assess financial data accuracy and identify potential errors or anomalies, selecting representative transaction samples and extrapolating results to entire datasets
                 \item Ensured efficient and effective SOX 404 compliance by developing a deep understanding of clients' business and IT processes, providing best practice recommendations and audit support documentation
-                \item Developed and deployed 15+ custom digital tools for engagement teams, including automated reporting systems and dashboard visualization tools that became the foundation for solutions used by engagement teams across the US
+                \item Developed and deployed custom digital tools for engagement teams, including automated reporting systems and dashboard visualization tools that became the foundation for solutions used by engagement teams across the US
                 \item Built end-to-end data pipelines using SQL queries and ETL processes to provide key insights on financial metrics, trends, and correlations, working with cloud platforms including Snowflake to pull ERP data
                 \item Drove transformation of data tooling within EY to improve process efficiency and accuracy, partnering with IT teams to provision new systems and build scalable analytical solutions for data processing
                 \item Created evidence-based financial audit visualizations and generated automated reporting systems to facilitate external audits and compliance requirements
-                \item Recognized as a high performer with early promotions to Manager and Senior Manager roles and external recognition by the San Francisco Business Times/CAL CPA as an honoree of the Next Generation in Accounting
-                \item Coordinated and managed 20+ global statutory audits annually, while supporting an additional 50+. Traveled internationally to coach teams on best practices and emerging industry trends
-                \item Trained and supervised junior staff on US GAAP, regulatory matters, best practices, and data analytics methodologies through both formal lectures and on-the-job training
+                \item External recognition by the San Francisco Business Times/CAL CPA as an honoree of the Next Generation in Accounting
+                \item Experienced in complex technical accounting matters, including stock-based compensation, leases, capitalized software, investments, revenue recognition, convertible debt, ASC 842, ASC 606 % consider adding these as skills?
+                % \item Coordinated and managed 20+ global statutory audits annually, while supporting an additional 50+. Traveled internationally to coach teams on best practices and emerging industry trends
+                % \item Trained and supervised junior staff on US GAAP, regulatory matters, best practices, and data analytics methodologies through both formal lectures and on-the-job training
             \end{highlights}
         \end{onecolentry}
 
-        \vspace{0.10 cm}
-        \begin{onecolentry}
-            \textbf{Industry Focus:} Tech (including SaaS and subscription-based models), Retail
-        \end{onecolentry}
 
-        \vspace{0.10 cm}
-        \begin{onecolentry}
-            \textit{Ernst \& Young, San Jose, CA}
-        \end{onecolentry}
+
 
     
     \section{Education}
