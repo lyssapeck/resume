@@ -35,3 +35,9 @@ The build system automatically:
 2. Places the PDF in the `output/` directory
 3. Keeps intermediate files in the `build/` directory
 4. Works with both command-line builds and VS Code extensions
+
+## to install
+
+```bash
+sudo apt update && sudo apt install -y texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra
+```
