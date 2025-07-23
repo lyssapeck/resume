@@ -10,19 +10,9 @@ This resume is configured to automatically generate PDFs with date prefixes in t
 
 ## Building
 
-### Using latexmk (recommended)
-```bash
-latexmk alyssa_peck_resume.tex
-```
-
 ### Using VS Code LaTeX Workshop Extension
 The project is configured with VS Code settings to automatically use the correct output directories and file naming.
 
-### Manual cleanup (if needed)
-If a PDF ends up in the root directory, run:
-```bash
-./organize_output.sh
-```
 
 ## Configuration Files
 
@@ -39,5 +29,5 @@ The build system automatically:
 ## to install
 
 ```bash
-sudo apt update && sudo apt install -y texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra
+sudo apt update && sudo apt install -y latexmk texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra
 ```
