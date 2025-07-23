@@ -1,0 +1,52 @@
+# LaTeX intermediate and output files
+*.aux
+*.bbl
+*.blg
+*.brf
+*.fls
+*.fdb_latexmk
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.out
+*.toc
+*.acn
+*.acr
+*.alg
+*.glg
+*.glsdefs
+*.ist
+*.maf
+*.mtc*
+*.nav
+*.pdfsync
+*.ps
+*.snm
+*.synctex.gz
+*.thm
+*.xdv
+*.dvi
+*.run.xml
+*.bcf
+*.blx.bib
+*.cut
+*.loa
+*.lol
+*.mw
+*.pre
+*.tmp
+*.xdy
+*.fdb_latexmk
+*.synctex(busy)
+
+# VS Code settings
+.vscode/
+# MacOS
+.DS_Store
+# Windows
+Thumbs.db
