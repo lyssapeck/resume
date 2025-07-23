@@ -1,79 +1,95 @@
 
-\documentclass[11pt,a4paper]{article}
+\documentclass[10pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{geometry}
-\geometry{margin=1in}
+\usepackage[top=0.7in, bottom=0.7in, left=0.7in, right=0.7in]{geometry}
 \usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage{titlesec}
-\usepackage{authblk}
-\usepackage{abstract}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\rhead{A. Peck}
-\lhead{Curriculum Vitae}
-\cfoot{\thepage}
+\usepackage{multicol}
+\usepackage{parskip}
+\setlength{\parindent}{0pt}
+% Removed invalid \titlespacing* for starred sections
+\renewcommand{\baselinestretch}{1.05}
 
-\title{Curriculum Vitae: Alyssa Peck}
-\author[1]{Alyssa Peck}
-\affil[1]{123 Love Lane, Pleasantville, USA \\ (555) 123-4567 \\ \href{mailto:alyssa1peck@gmail.com}{alyssa1peck@gmail.com} \\ \href{https://linkedin.com/in/graceharper}{linkedin.com/in/graceharper}}
-\date{July 22, 2025}
-
+% Compact header
 \begin{document}
+\vspace*{-1.2cm}
+\begin{center}
+    {\LARGE \textbf{Alyssa Peck}} \\
+    123 Love Lane, Pleasantville, USA $\vert$ (555) 123-4567 $\vert$ \href{mailto:alyssa1peck@gmail.com}{alyssa1peck@gmail.com} $\vert$ \href{https://linkedin.com/in/graceharper}{linkedin.com/in/graceharper}
+\end{center}
+\vspace{-0.5em}
 
-\maketitle
+% Summary
+\textbf{CPA with 9 years' experience leading global cross-functional teams, driving digital finance transformation, and optimizing processes. Passionate about aligning financial operations with strategic goals through automation, analytics, and continuous improvement.}
+\vspace{0.5em}
 
-\begin{abstract}
-Alyssa Peck is a compassionate, dedicated, and endlessly patient individual with a lifelong commitment to helping others. Renowned for her warmth, generosity, and ability to bring out the best in everyone she meets. She seeks opportunities to make a positive impact in her community and beyond.
-\end{abstract}
-
-\vspace{1em}
-\noindent\textbf{Keywords:} education, community, volunteerism, empathy, leadership
-
-
-% Unnumbered sections and horizontal rules for dividing lines
-\section*{Professional Experience}
-\noindent\rule{\textwidth}{0.4pt}
-\subsection*{Community Volunteer, Pleasantville Community Center (2015--Present)}
-\begin{itemize}[leftmargin=*]
-    \item Organizes weekly food drives, clothing donations, and outreach programs for local families in need.
-    \item Mentors children and teens, fostering self-confidence and kindness.
-    \item Coordinates holiday events, ensuring everyone feels included and valued.
+% --- Experience ---
+\section*{Experience}
+\textbf{Ernst \& Young, San Jose, CA} \hfill \textit{Aug 2023--Present}\\
+Assurance Senior Manager \,\textbar\, Digital Advisor\\
+\textit{Previously: Manager, Digital Coach, Senior, Associate (Aug 2016--Aug 2023)}
+\begin{itemize}[leftmargin=*, itemsep=0.2em, topsep=0.2em]
+    \item Led global audits for Fortune 100 tech clients, managing teams of 8--15 and collaborating with diverse stakeholders, including international and offshore teams.
+    \item Owned and led digital transformation for EY's Apple account; coached teams on GenAI, Alteryx, Power BI, and global tools adoption.
+    \item Led audit adoptions of new standards (ASC 842, ASC 606); experienced in complex technical accounting (stock-based comp, leases, investments, revenue, convertible debt).
+    \item Ensured SOX 404 compliance by understanding business/IT processes and providing best practice recommendations.
+    \item Developed and deployed 15+ custom digital tools, including a dashboard now used by engagement teams across the US.
+    \item Built end-to-end data pipelines for key insights on financial metrics, trends, and correlations.
+    \item Drove transformation of data tooling to improve process efficiency and accuracy; worked with IT to provision new systems for software tools.
+    \item Communicated results to Audit Committee to align financial reporting with enterprise risk/governance frameworks.
+    \item Recognized as a high performer with early promotions and external recognition (SF Business Times/CAL CPA Next Gen in Accounting).
+    \item Coordinated 20+ global statutory audits annually, supporting 50+ more; traveled internationally to coach teams on best practices.
+    \item Trained and supervised junior staff on US GAAP, regulatory matters, and digital audit methodology.
+    \item Ensured compliance with deadlines by reorganizing priorities, adjusting workloads, and restructuring teams.
 \end{itemize}
+\textbf{Industry:} Tech (SaaS), Retail
 
-\subsection*{Elementary School Teacher, Pleasantville Elementary School (2005--2015)}
-\begin{itemize}[leftmargin=*]
-    \item Created a nurturing classroom environment where every child felt safe and supported.
-    \item Developed creative lesson plans that encouraged curiosity and empathy.
-    \item Received ``Teacher of the Year'' award for outstanding dedication and positive influence.
-\end{itemize}
-
+% --- Education ---
 \section*{Education}
-\noindent\rule{\textwidth}{0.4pt}
-\textbf{Bachelor of Arts in Education}, Pleasantville University (2001--2005)
+\textbf{Santa Clara University, Santa Clara, CA} \hfill \textit{B.S. Accounting, Minor in Entrepreneurship, June 2016}
 
-\section*{Skills}
-\noindent\rule{\textwidth}{0.4pt}
-\begin{itemize}[leftmargin=*]
-    \item Exceptional interpersonal and communication skills
-    \item Conflict resolution and active listening
-    \item Event planning and organization
-    \item Empathy, patience, and positivity
-    \item Teamwork and leadership
+% --- Skills & Certifications ---
+\section*{Skills \& Certifications}
+\begin{multicols}{2}
+\textbf{Certifications:}
+\begin{itemize}[leftmargin=*, itemsep=0.1em, topsep=0.1em]
+    \item CPA, California (145179)
+    \item AICPA member
+    \item EY Digital Silver Badge
+    \item Alteryx Designer Core Cert.
+    \item Lean Six Sigma White Belt
 \end{itemize}
 
-\section*{Awards and Recognition}
-\noindent\rule{\textwidth}{0.4pt}
-\begin{itemize}[leftmargin=*]
-    \item Pleasantville ``Heart of Gold'' Award, 2022
-    \item Teacher of the Year, Pleasantville Elementary, 2012
-    \item Volunteer of the Month, Pleasantville Community Center, multiple years
+\textbf{Skills:}
+\begin{itemize}[leftmargin=*, itemsep=0.1em, topsep=0.1em]
+    \item US GAAP
+    \item Digital Transformation/Automation (AI, RPA)
+    \item Global Process Optimization
+    \item SOX 404 Compliance \& Risk Mitigation
+    \item Cross-Functional Leadership
+    \item Data Analytics
 \end{itemize}
 
+\textbf{Systems:}
+\begin{itemize}[leftmargin=*, itemsep=0.1em, topsep=0.1em]
+    \item SAP, NetSuite, Power BI, Power Automate (RPA), Alteryx (ETL)
+    \item Microsoft 365, Copilot, Blackline, Workday, Coupa
+    \item AuditBoard, Asana, Box, DataSnipper, SQL
+\end{itemize}
+\end{multicols}
+
+% --- Awards ---
+\section*{Awards}
+\begin{itemize}[leftmargin=*, itemsep=0.1em, topsep=0.1em]
+    \item Pleasantville "Heart of Gold" Award (2022)
+    \item Teacher of the Year, Pleasantville Elementary (2012)
+    \item Volunteer of the Month, Pleasantville Community Center (multiple years)
+\end{itemize}
+
+% --- References ---
 \section*{References}
-\noindent\rule{\textwidth}{0.4pt}
 Available upon request.
 
 \end{document}

@@ -1,0 +1,32 @@
+
+CPA with 9 years of experience leading global cross-functional teams, driving digital finance transformation, and optimizing processes. Passionate about aligning financial operations with strategic goals through automation, advanced analytics, and continuous improvement.
+
+Experience
+Ernst & Young, San Jose, CA 	
+Assurance Senior Manager and Digital Advisor 	August 2023 - Present
+Previously:  Assurance Manager and Digital Coach, Senior and Associate 	August 2016 - August 2023
+
+Led multiple global audits, for Fortune 100 tech clients, managing teams of 8-15, while collaborating with diverse external and internal stakeholders, including international component and offshore support teams.
+Owned and led digital transformation strategy for EY’s Apple account and served as Digital Advisor to West Region, coaching teams on GenAI, Alteryx, Power BI, and global tools adoption, aligning with Lean Six Sigma principles.
+Experienced in complex technical accounting matters, including stock-based compensation, leases, capitalized software, investments, revenue recognition, and convertible debt. Led audit adoptions of new standards like ASC 842 and ASC 606.
+Ensured efficient and effective SOX 404 compliance by developing a deep understanding of clients' business and IT processes, providing best practice recommendations.
+Developed and deployed 15+ custom digital tools for engagement teams, including a key dashboard visualization tool that was the foundation for the current solution used by engagement teams across the US.
+Developed and deployed end to end data pipelines to provide key insights on financial metrics, trends, and correlations required to provide assurance financials are appropriately stated.
+Drove transformation of data tooling within EY to improve process efficiency and accuracy, working with IT to provision new systems to allow me and my team to build software tools for data processing
+Communicated results to clients’ Audit Committee, to drive alignment between financial reporting objectives and enterprise risk/governance frameworks.
+Recognized as a high performer with early promotions to Manager and Senior Manager roles and external recognition by the San Francisco Business Times/CAL CPA as an honoree of the Next Generation in Accounting 
+Understood clients' strategic business objectives through various touchpoints, including quarterly meetings with C-Suite executives, to ensure alignment.
+Coordinated and managed 20+ global statutory audits annually, while supporting an additional 50+. Traveled internationally to coach teams on best practices and emerging industry trends.
+Trained and supervised junior staff on US GAAP, regulatory matters, best practices, and EY’s digital audit methodology through both formal lectures and on-the-job training.
+Ensured compliance with external and internal deadlines by reorganizing team priorities, adjusting workloads, and restructuring teams to achieve timely completion of all audits.
+Industry
+Tech (including SaaS), Retail
+
+Education
+Santa Clara University, Santa Clara, CA 	Graduated June 2016
+Bachelor of Science in Accounting, Minor in Entrepreneurship  	
+
+Additional Skills and Knowledge 
+Certifications and Memberships: Certified Public Accountant, California Board of Accountancy (145179) and AICPA member, EY Digital Silver Badge, Alteryx Designer Core Certification, Lean Six Sigma White Belt 
+Skills: US GAAP, Digital Transformation and Automation (AI/RPA), Global Process Optimization, SOX 404 Compliance & Risk Mitigation, Cross-Functional Leadership and Talent Development, Data Analytics 
+Systems: SAP, NetSuite, Power BI, Power Automate (RPA), Alteryx (ETL), Microsoft 365, Copilot, Blackline, Workday, Coupa, AuditBoard, Asana, Box, DataSnipper, SQL
