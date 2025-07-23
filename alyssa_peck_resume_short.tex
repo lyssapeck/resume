@@ -3,11 +3,11 @@
 % Packages:
 \usepackage[
     ignoreheadfoot, % set margins without considering header and footer
-    top=1.5 cm, % seperation between body and page edge from the top
-    bottom=1.5 cm, % seperation between body and page edge from the bottom
-    left=1.5 cm, % seperation between body and page edge from the left
-    right=1.5 cm, % seperation between body and page edge from the right
-    footskip=0.5 cm, % seperation between body and footer
+    top=2 cm, % seperation between body and page edge from the top
+    bottom=2 cm, % seperation between body and page edge from the bottom
+    left=2 cm, % seperation between body and page edge from the left
+    right=2 cm, % seperation between body and page edge from the right
+    footskip=1.0 cm, % seperation between body and footer
     % showframe % for debugging 
 ]{geometry} % for adjusting page geometry
 \usepackage{titlesec} % for customizing section titles
@@ -53,8 +53,15 @@
 \setlength{\parindent}{0pt} % no indentation
 \setlength{\topskip}{0pt} % no top skip
 \setlength{\columnsep}{0cm} % set column seperation
+\makeatletter
+\let\ps@customFooterStyle\ps@plain % Copy the plain style to customFooterStyle
+\patchcmd{\ps@customFooterStyle}{\thepage}{
+    \color{gray}\textit{\small Alyssa Peck - Page \thepage{} of \pageref*{LastPage}}
+}{}{} % replace number by desired string
+\makeatother
+\pagestyle{customFooterStyle}
 
-\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large\color{primaryColor}}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
 
 \titlespacing{\section}{
     % left space:
@@ -155,7 +162,7 @@
     \vspace{0.3 cm - 0.3 cm}
 
     \begin{onecolentry}
-        CPA with 9 years of experience in finance analytics, business intelligence, and financial systems analysis. Proven track record of partnering with accounting teams, data infrastructure, and financial systems to deliver impactful analytical solutions. Expert in building automated reporting systems, revenue recognition analytics, and data-driven insights for subscription-based business models. Passionate about aligning financial operations with strategic goals through advanced analytics and scalable BI solutions.
+        CPA with 9 years of experience in finance analytics, business intelligence, and financial systems analysis. Proven track record of partnering with accounting teams, data infrastructure, and financial systems to deliver impactful analytical solutions. Expert in building automated reporting systems, revenue recognition analytics, and data-driven insights for subscription-based business models.
     \end{onecolentry}
 
     
@@ -174,21 +181,14 @@
         \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Led multiple global audits for Fortune 100 tech clients, managing teams of 8-15, while collaborating with diverse external and internal stakeholders, including international component and offshore support teams
-                \item Owned and led digital transformation strategy for EY's Apple account and served as Digital Advisor to West Region, coaching teams on GenAI, Alteryx, Power BI, and global tools adoption, aligning with Lean Six Sigma principles
-                \item Built sophisticated revenue recognition analytics and monitoring systems for subscription-based business models, including Box Inc., analyzing revenue streams and creating predictive analytical procedures to forecast revenues under ASC 606
-                \item Developed comprehensive financial data models downstream from NetSuite and SAP B1 systems, creating reports and leveraging data for automated dashboards and financial analysis, including aging analysis, trend reporting, correlation analysis, and variance analysis
-                \item Experienced in complex technical accounting matters, including stock-based compensation, leases, capitalized software, investments, revenue recognition, and convertible debt. Led audit adoptions of new standards like ASC 842 and ASC 606
-                \item Performed Budget vs Actual (BvA) analysis for engagement teams to assess project profitability and resource allocation, forecasting future financial performance based on historical data and current trends using advanced analytical techniques
-                \item Implemented statistical sampling methodologies to assess financial data accuracy and identify potential errors or anomalies, selecting representative transaction samples and extrapolating results to entire datasets
-                \item Ensured efficient and effective SOX 404 compliance by developing a deep understanding of clients' business and IT processes, providing best practice recommendations and audit support documentation
-                \item Developed and deployed 15+ custom digital tools for engagement teams, including automated reporting systems and dashboard visualization tools that became the foundation for solutions used by engagement teams across the US
-                \item Built end-to-end data pipelines using SQL queries and ETL processes to provide key insights on financial metrics, trends, and correlations, working with cloud platforms including Snowflake to pull ERP data
-                \item Drove transformation of data tooling within EY to improve process efficiency and accuracy, partnering with IT teams to provision new systems and build scalable analytical solutions for data processing
-                \item Created evidence-based financial audit visualizations and generated automated reporting systems to facilitate external audits and compliance requirements
-                \item Recognized as a high performer with early promotions to Manager and Senior Manager roles and external recognition by the San Francisco Business Times/CAL CPA as an honoree of the Next Generation in Accounting
-                \item Coordinated and managed 20+ global statutory audits annually, while supporting an additional 50+. Traveled internationally to coach teams on best practices and emerging industry trends
-                \item Trained and supervised junior staff on US GAAP, regulatory matters, best practices, and data analytics methodologies through both formal lectures and on-the-job training
+                \item Led global audits for Fortune 100 tech clients, managing teams of 8-15 and collaborating with international stakeholders
+                \item Built revenue recognition analytics and monitoring systems for subscription-based business models, including predictive forecasting under ASC 606
+                \item Developed financial data models from NetSuite and SAP B1 systems, creating automated dashboards for aging analysis, trend reporting, and variance analysis
+                \item Performed Budget vs Actual analysis for project profitability and resource allocation using statistical sampling methodologies
+                \item Deployed 15+ custom digital tools including automated reporting systems and ETL pipelines using SQL and cloud platforms like Snowflake
+                \item Led digital transformation strategy and coached teams on GenAI, Alteryx, and Power BI adoption across engagement teams
+                \item Managed 20+ global statutory audits annually and ensured SOX 404 compliance with audit support documentation
+                \item Recognized as high performer with early promotions and external recognition by San Francisco Business Times as Next Generation in Accounting honoree
             \end{highlights}
         \end{onecolentry}
 
@@ -221,25 +221,19 @@
     \section{Skills and Certifications}
 
         \begin{onecolentry}
-            \textbf{Certifications and Memberships:} Certified Public Accountant, California Board of Accountancy (145179) and AICPA member, EY Digital Silver Badge, Alteryx Designer Core Certification, Lean Six Sigma White Belt
+            \textbf{Certifications:} CPA (CA 145179), AICPA Member, EY Digital Silver Badge, Alteryx Designer Core, Lean Six Sigma White Belt
         \end{onecolentry}
 
         \vspace{0.2 cm}
 
         \begin{onecolentry}
-            \textbf{Technical Skills:} SQL (data querying and analysis), Python (data manipulation and automation), Power BI, Tableau (viewed), Alteryx (ETL), Statistical Sampling and Analysis, Data Modeling, Revenue Recognition Analytics (ASC 606), Financial Planning \& Analysis (FP\&A)
+            \textbf{Technical Skills:} SQL, Python, Power BI, Tableau, Alteryx (ETL), Statistical Sampling, Data Modeling, Revenue Recognition Analytics (ASC 606), Financial Planning \& Analysis
         \end{onecolentry}
 
         \vspace{0.2 cm}
 
         \begin{onecolentry}
-            \textbf{Core Competencies:} US GAAP, Digital Transformation and Automation (AI/RPA), Global Process Optimization, SOX 404 Compliance \& Risk Mitigation, Cross-Functional Leadership, Business Intelligence, Automated Reporting Systems, Data Quality Frameworks
-        \end{onecolentry}
-
-        \vspace{0.2 cm}
-
-        \begin{onecolentry}
-            \textbf{Systems \& Platforms:} NetSuite (reporting and data extraction), SAP B1 (financial reporting and analysis), Snowflake (data querying), Power BI, Power Automate (RPA), Alteryx (ETL), Microsoft 365, Copilot, Blackline, Workday, Coupa, AuditBoard, Asana, Box, DataSnipper
+            \textbf{Systems:} NetSuite, SAP B1, Snowflake, Power BI, Alteryx, Microsoft 365, Blackline, Workday, AuditBoard
         \end{onecolentry}
 
 \end{document}
