@@ -1,0 +1,51 @@
+Key Questions:
+Technical Skills Deep Dive:
+
+How proficient are you with SQL and Python? The role heavily emphasizes these
+Do you have experience with cloud platforms (AWS, GCP) or modern data stack tools (dbt, Airflow)?
+Any experience with Looker or Tableau beyond Power BI?
+familiar with reading sql queries and viewing data, but not writing complex queries. I have seen tableau but have primarily worked with power bi, I have viewed snowflake to pull erp data from a client's database 
+
+
+Financial Systems Experience:
+
+I see you mention NetSuite - can you elaborate on your hands-on experience with it?
+familiar with creating reports in netsuite and leveraging the data to create dashboards, but not with the backend or database side of it. I have used netsuite to pull data for financial reporting and analysis, but not for system configuration or administration.
+I have experienc using SAP B1 for financial reporting and analysis, but not for system configuration or administration. I have used SAP B1 to pull data for financial reporting and analysis, but not for system configuration or administration.
+Any experience with Stripe or other payment platforms?
+Have you built data models downstream from financial systems?
+Yes I have built data visulaizations to demonstrate financial trends including aging analysis, trend reporting, corrolation analysis, and variance analysis. I have used these visualizations to generate evidence for financial audits. 
+
+
+Revenue Recognition & Analytics:
+
+You mention ASC 606 experience - can you provide specific examples of revenue recognition analytics work?
+Any experience with subscription or consumption-based business models?
+yes I have experience with Box, inc. who is a client of mine, they are a subscription based business. I have analyzed their revenue streams and createed predicted analytical procedures to forecast revenues. 
+
+
+Analytics Engineering:
+
+Can you describe specific automated reporting systems you've built?
+Any experience with ETL processes beyond Alteryx?
+Have you worked on data quality frameworks?
+
+
+Startup/High-Growth Experience:
+
+Do you have any experience in startup environments or high-growth companies?
+Any FP&A (Financial Planning & Analysis) experience?
+I have experience performing BvA (Budget vs Actual) analysis for our engagement teams to assess project profitability and resource allocation. I have also worked on forecasting future financial performance based on historical data and current trends. This involved analyzing past project costs, and resource utilization to create accurate financial models for future projects.
+
+
+Programming/Development:
+
+You mention building "15+ custom digital tools" - what technologies did you use?
+Any experience with statistical analysis or advanced analytics techniques?
+I have used statistical sampling methodologies to assess the accuracy of financial data and identify potential errors or anomalies. This involved selecting a representative sample of transactions, analyzing them for accuracy, and extrapolating the results to the entire dataset. 
+
+
+Achievements & Metrics:
+
+Can you quantify the impact of your digital transformation initiatives?
+Any specific examples of process improvements with measurable results?
